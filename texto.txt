@@ -25,9 +25,9 @@ FEITO 8. Executar os comandos abaixo para adicionar as bibliotecas necessárias.
     dotnet add package System.IdentityModel.Tokens.Jwt --version 8.14.0
     dotnet add package Pomelo.EntityFrameworkCore.MySql --version 9.0.0
 
-9. Criar na pasta Models, as classes do diagrama, que está na Docs (Categoria, Produto, Usuario);
+FEITO 9. Criar na pasta Models, as classes do diagrama, que está na Docs (Categoria, Produto, Usuario);
 
-9.1. Lembre-se de adicionar os DataAnnotations necessários, em caso de dúvidas, consulte os projetos já desenvolvidos;
+feito 9.1. Lembre-se de adicionar os DataAnnotations necessários, em caso de dúvidas, consulte os projetos já desenvolvidos;
 
 FEITO 10. Criar na pasta do projeto uma pasta Data;
 
