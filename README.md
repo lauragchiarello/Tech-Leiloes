@@ -1,2 +1,4 @@
 # Tech-Leiloes
-Projeto Web Scraping Leilões - TCC e Projeto Interdisciplinar
+Projeto Interdisciplinar e TCC: CRIAR API e documentação.
+.NET, C# e SQLserver
+
