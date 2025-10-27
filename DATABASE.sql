@@ -5,17 +5,17 @@ USE TechLeiloes;
 GO
 
 
--- TABELA: Usuarios
+-- TABELA: Usuario
 
-CREATE TABLE Usuarios (
+CREATE TABLE Usuario (
     id_usuario INT IDENTITY(1,1) PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    telefone VARCHAR(11) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
     data_nascimento DATE NOT NULL,
-    profissao VARCHAR(50),
+    profissao VARCHAR(50) NOT NULL,
     data_criacaoConta DATETIME DEFAULT GETDATE(),
-    nivel_experiencia VARCHAR(20) CHECK (nivel_experiencia IN ('Iniciante', 'Intermediário', 'Avançado'))
+    nivel_experiencia VARCHAR(20) CHECK (nivel_experiencia IN ('Iniciante', 'IntermediÃ¡rio', 'Profissional'))
 );
 
 
@@ -26,12 +26,10 @@ CREATE TABLE Leiloeiro (
     id_leiloeiro INT IDENTITY(1,1) PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    telefone VARCHAR(11) NOT NULL,
-    website VARCHAR(100),
-    cadastro_juntacomercial VARCHAR(100)
+    telefone VARCHAR(12) NOT NULL,
+    website VARCHAR(300) NOT NULL
+
 );
-
-
 
 -- TABELA: Categoria
 
@@ -39,7 +37,6 @@ CREATE TABLE Categoria (
     id_categoria INT IDENTITY(1,1) PRIMARY KEY,
     tipo VARCHAR(50) NOT NULL
 );
-
 
 -- TABELA: Estado
 
@@ -50,14 +47,12 @@ CREATE TABLE Estado (
 );
 
 
-
 -- TABELA: Status
 
 CREATE TABLE Status (
     id_status INT IDENTITY(1,1) PRIMARY KEY,
-    status VARCHAR(20) CHECK (status IN ('Vendido','Cancelado','Suspenso'))
+    tipo_status VARCHAR(20) CHECK (tipo_status IN ('Vendido','Cancelado','Suspenso'))
 );
-
 
 -- TABELA: Imovel
 
@@ -70,13 +65,13 @@ CREATE TABLE Imovel (
     cidade VARCHAR(100),
     cep VARCHAR(10),
     edital VARCHAR(255),
-    descricao VARCHAR(500),
+    descricao VARCHAR(1000),
     data_primeiraPraca DATE,
     valor_primeiraPraca DECIMAL(18,2),
     data_segundaPraca DATE,
     valor_segundaPraca DECIMAL(18,2),
     id_status INT,
-    desconto DECIMAL(5,2),
+    desconto INT,
     criado_em DATETIME DEFAULT GETDATE(),
     website_leiloeiro VARCHAR(200),
     FOREIGN KEY (id_leiloeiro) REFERENCES Leiloeiro(id_leiloeiro),
@@ -84,8 +79,6 @@ CREATE TABLE Imovel (
     FOREIGN KEY (id_estado) REFERENCES Estado(id_estado),
     FOREIGN KEY (id_status) REFERENCES Status(id_status)
 );
-
-
 
 -- TABELA: Foto
 
@@ -97,7 +90,6 @@ CREATE TABLE Foto (
 );
 GO
 
-
 -- TABELA: Favoritos (N:N entre Usuario e Imovel)
 
 CREATE TABLE Favoritos (
@@ -105,11 +97,9 @@ CREATE TABLE Favoritos (
     id_usuario INT NOT NULL,
     id_imovel INT NOT NULL,
     criado_em DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario),
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
     FOREIGN KEY (id_imovel) REFERENCES Imovel(id_imovel)
 );
-
-
 
 -- TABELA: HistoricoLeilao
 
@@ -121,8 +111,6 @@ CREATE TABLE HistoricoLeilao (
     FOREIGN KEY (id_imovel) REFERENCES Imovel(id_imovel),
     FOREIGN KEY (id_status) REFERENCES Status(id_status)
 );
-
-
 
 -- TABELA: Sincronizacao_site_leiloeiro
 

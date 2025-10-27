@@ -15,13 +15,13 @@ builder.Services.AddControllers();
 
 // Serviço de Conexão com o Banco
 string conexao = builder.Configuration.GetConnectionString("Conexao");
-var versao = ServerVersion.AutoDetect(conexao);
+
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySQL(conexao, versao)
+    options.UseSqlServer(conexao)
 );
 
 // Serviço de Autenticação e Autorização - Identity
-builder.Services.AddIdentity<Usario, IdentityRole>(options =>
+builder.Services.AddIdentity<Usuario, IdentityRole>(options =>
 {
     // Configurar Senha
     options.Password.RequiredLength = 6;
@@ -90,7 +90,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "<NOME PROJETO> API",
+        Title = "Tech Leilões API",
         Version = "v1",
         Description = "<Descrever o projeto>"
     });
