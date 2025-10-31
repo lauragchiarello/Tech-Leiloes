@@ -18,7 +18,7 @@ namespace TechLeiloes.API.Models
         public string Telefone { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime DataNascimento { get; set; }
+        public DateTime? DataNascimento { get; set; }
 
         [Required(ErrorMessage = "A profissão é obrigatória")]
         public string Profissao { get; set; }

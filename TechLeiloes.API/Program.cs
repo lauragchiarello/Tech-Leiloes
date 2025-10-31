@@ -1,6 +1,9 @@
 using System.Text;
 using TechLeiloes.API.Data;
+using TechLeiloes.API.Middleware;
 using TechLeiloes.API.Models;
+using TechLeiloes.API.Services.Implementations;
+using TechLeiloes.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -65,14 +68,13 @@ builder.Services.AddAuthentication(options =>
 // Adicionar a Autorização
 builder.Services.AddAuthorization();
 
+// Serviço de Arquivos
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IFileService, FileService>();
+
 // Registro dos Serviços Customizados
-
-
-// Registro dos Repositórios
-
-
-// Registro dos Serviços
-
+builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 // Configuração do CORS
 builder.Services.AddCors(options =>
@@ -90,9 +92,9 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Tech Leilões API",
+        Title = "<TechLeiloes> API",
         Version = "v1",
-        Description = "<Descrever o projeto>"
+        Description = "API de fornecimento de dados de produtos"
     });
 
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -122,20 +124,31 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+// Garantir que o banco exista ao executar o projeto
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await db.Database.EnsureCreatedAsync();
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "GAF v1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "<TechLeiloes> v1");
         c.RoutePrefix = string.Empty;
     });
 }
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseCors("AllowAll");
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseAuthentication();
 app.UseAuthorization();
