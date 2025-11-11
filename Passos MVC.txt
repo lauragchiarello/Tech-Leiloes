@@ -1,17 +1,17 @@
 1. Executar diretamente na pasta do repositório o comando:
-    dotnet new mvc -o <NOME DO PROJETO>.UI
+    dotnet new mvc -o TechLeiloes.UI
 
 
-2. Executar diretamente na pasta do repositório, se existir um arquivo <NOME DO PROJETO>.sln
-  dotnet sln add <NOME DO PROJETO>.UI\<NOME DO PROJETO>.UI.csproj
+2. Executar diretamente na pasta do repositório, se existir um arquivo TechLeiloes.sln
+  dotnet sln add TechLeiloes.UI\TechLeiloes.UI.csproj
 
 
-3. Altera no arquivo <NOME DO PROJETO>.API.csproj a linha 5:
+3. Altera no arquivo TechLeiloes.API.csproj a linha 5:
     <Nullable>disable</Nullable>
 
 
 4. Criar na pasta a classe ApiSettings
-namespace <NOME DO PROJETO>.UI.Models;
+namespace TechLeiloes.UI.Models;
 
 public class ApiSettings
 {
@@ -20,10 +20,10 @@ public class ApiSettings
 }
 
 
-5. Abra o arquivo launchSettings.json do projeto <NOME DO PROJETO>.API e copie o caminho de rota da chave http -> applicationUrl.
+5. Abra o arquivo launchSettings.json do projeto TechLeiloes.API e copie o caminho de rota da chave http -> applicationUrl.
 
 
-6. Abra o arquivo appsettings.json do projeto <NOME DO PROJETO>.UI e adicione o código abaixo alterando a rota para a copiada no passo 4:
+6. Abra o arquivo appsettings.json do projeto TechLeiloes.UI e adicione o código abaixo alterando a rota para a copiada no passo 4:
 {
   "Logging": {
     "LogLevel": {
@@ -40,7 +40,7 @@ public class ApiSettings
 
     
 7. Registre os serviços no Program.cs:
-using <NOME DO PROJETO>.UI.Models;
+using TechLeiloes.UI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -116,13 +116,13 @@ app.MapControllerRoute(
 app.Run();
 
 
-8. Criar uma pasta ViewModels dentro da pasta do projeto <NOME DO PROJETO>.UI
+8. Criar uma pasta ViewModels dentro da pasta do projeto TechLeiloes.UI
 
 
 9. Criar a classe LoginVM dentro da pasta ViewModels:
 using System.ComponentModel.DataAnnotations;
 
-namespace <NOME DO PROJETO>.UI.ViewModels;
+namespace TechLeiloes.UI.ViewModels;
 
 public class LoginVM
 {
@@ -141,7 +141,7 @@ public class LoginVM
 10. Criar a classe RegistroVM dentro da pasta ViewModels:
 using System.ComponentModel.DataAnnotations;
 
-namespace <NOME DO PROJETO>.UI.ViewModels;
+namespace TechLeiloes.UI.ViewModels;
 
 public class RegistroVM
 {
@@ -168,13 +168,13 @@ public class RegistroVM
 }
 
 
-11. Crie uma pasta DTOs dentro da pasta do projeto <NOME DO PROJETO>.UI
+11. Crie uma pasta DTOs dentro da pasta do projeto TechLeiloes.UI
 
 
 12. Crie na pasta DTOs a classe UserDto:
 using System.Text.Json.Serialization;
 
-namespace <NOME DO PROJETO>.UI.DTOs;
+namespace TechLeiloes.UI.DTOs;
 
 public class UserDto
 {
@@ -201,7 +201,7 @@ public class UserDto
 13. Crie na pasta DTOs a classe AuthResponseDto:
 using System.Text.Json.Serialization;
 
-namespace <NOME DO PROJETO>.UI.DTOs;
+namespace TechLeiloes.UI.DTOs;
 
 public class AuthResponseDto
 {
@@ -216,7 +216,7 @@ public class AuthResponseDto
 }
 
 
-14. Crie uma pasta Services dentro da pasta do projeto <NOME DO PROJETO>.UI, dentro desta nova pasta criar outras duas pastas:
+14. Crie uma pasta Services dentro da pasta do projeto TechLeiloes.UI, dentro desta nova pasta criar outras duas pastas:
   - Interfaces
   - Implementations
 
@@ -224,10 +224,10 @@ public class AuthResponseDto
 15. Crie na pasta Services\Implementations a classe BaseApiService:
 using System.Text;
 using System.Text.Json;
-using <NOME DO PROJETO>.UI.Models;
+using TechLeiloes.UI.Models;
 using Microsoft.Extensions.Options;
 
-namespace <NOME DO PROJETO>.UI.Services.Implementations;
+namespace TechLeiloes.UI.Services.Implementations;
 
 public abstract class BaseApiService
 {
@@ -338,9 +338,9 @@ public class ErrorResponse
 
 
 16. Criar dentro da pasta Services\Interfaces a interface IAuthService:
-using <NOME DO PROJETO>.UI.ViewModels;
+using TechLeiloes.UI.ViewModels;
 
-namespace <NOME DO PROJETO>.UI.Services.Interfaces;
+namespace TechLeiloes.UI.Services.Interfaces;
 
 public interface IAuthService
 {
@@ -360,13 +360,13 @@ public interface IAuthService
 17. Criar dentro da pasta Services\Implementations a classe AuthService:
 using System.Text;
 using System.Text.Json;
-using <NOME DO PROJETO>.UI.DTOs;
-using <NOME DO PROJETO>.UI.Models;
-using <NOME DO PROJETO>.UI.Services.Interfaces;
-using <NOME DO PROJETO>.UI.ViewModels;
+using TechLeiloes.UI.DTOs;
+using TechLeiloes.UI.Models;
+using TechLeiloes.UI.Services.Interfaces;
+using TechLeiloes.UI.ViewModels;
 using Microsoft.Extensions.Options;
 
-namespace <NOME DO PROJETO>.UI.Services.Implementations;
+namespace TechLeiloes.UI.Services.Implementations;
 
 public class AuthService : BaseApiService, IAuthService
 {
@@ -540,9 +540,9 @@ public class AuthService : BaseApiService, IAuthService
 
 18. Crei na pasta Services\Implementations a classe UserContextService:
 using System.Security.Claims;
-using <NOME DO PROJETO>.UI.Services.Interfaces;
+using TechLeiloes.UI.Services.Interfaces;
 
-namespace <NOME DO PROJETO>.UI.Services.Implementations;
+namespace TechLeiloes.UI.Services.Implementations;
 
 public class UserContextService
 {
@@ -572,10 +572,10 @@ public class UserContextService
 }
 
 
-19. Crie uma pasta Middleware na raiz do projeto <NOME DO PROJETO>.UI, e dentro a classe SessionAuthMiddleware:
-using <NOME DO PROJETO>.UI.Services.Implementations;
+19. Crie uma pasta Middleware na raiz do projeto TechLeiloes.UI, e dentro a classe SessionAuthMiddleware:
+using TechLeiloes.UI.Services.Implementations;
 
-namespace <NOME DO PROJETO>.UI.Middleware;
+namespace TechLeiloes.UI.Middleware;
 
 public class SessionAuthMiddleware
 {
@@ -596,10 +596,10 @@ public class SessionAuthMiddleware
 
 
 20. Adicionando os novos serviços no Program.cs:
-using <NOME DO PROJETO>.UI.Middleware;
-using <NOME DO PROJETO>.UI.Models;
-using <NOME DO PROJETO>.UI.Services.Implementations;
-using <NOME DO PROJETO>.UI.Services.Interfaces;
+using TechLeiloes.UI.Middleware;
+using TechLeiloes.UI.Models;
+using TechLeiloes.UI.Services.Implementations;
+using TechLeiloes.UI.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -685,11 +685,11 @@ app.Run();
 
 
 21. Adicione um Controller com o nome AuthController na pastas Controllers
-using <NOME DO PROJETO>.UI.Services.Interfaces;
-using <NOME DO PROJETO>.UI.ViewModels;
+using TechLeiloes.UI.Services.Interfaces;
+using TechLeiloes.UI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace <NOME DO PROJETO>.UI.Controllers;
+namespace TechLeiloes.UI.Controllers;
 
 public class AuthController : Controller
 {
@@ -780,7 +780,7 @@ main {
 
 
 23. Criar na pasta Views\Shared\_LoginPartial.cshtml:
-@using <NOME DO PROJETO>.UI.Services
+@using TechLeiloes.UI.Services
 @inject IAuthService AuthService
 @{
     string foto = AuthService.GetUserFoto();
@@ -815,11 +815,11 @@ else
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><NOME DO PROJETO> - @ViewData["Title"]</title>
+    <title>TechLeiloes - @ViewData["Title"]</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/<NOME DO PROJETO>.UI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TechLeiloes.UI.styles.css" asp-append-version="true" />
     @await RenderSectionAsync("Styles", required: false)
 </head>
 
@@ -827,7 +827,7 @@ else
     <header class="d-block">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><NOME DO PROJETO></a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TechLeiloes</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -854,7 +854,7 @@ else
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - <NOME DO PROJETO> - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2025 - TechLeiloes - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -868,10 +868,10 @@ else
 
 
 25. Altere o arquivo Views\_ViewImports.cshtml:
-@using <NOME DO PROJETO>.UI
-@using <NOME DO PROJETO>.UI.Models
-@using <NOME DO PROJETO>.UI.ViewModels
-@using <NOME DO PROJETO>.UI.Services.Interfaces
+@using TechLeiloes.UI
+@using TechLeiloes.UI.Models
+@using TechLeiloes.UI.ViewModels
+@using TechLeiloes.UI.Services.Interfaces
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 
@@ -989,7 +989,7 @@ else
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace <NOME DO PROJETO>.UI.Controllers;
+namespace TechLeiloes.UI.Controllers;
 
 [Authorize(Roles = "Administrador")]
 public class AdminController : Controller

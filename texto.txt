@@ -1,3 +1,5 @@
+
+//    "Conexao":"Server=(localdb)\\MSSQLLocalDB;Database=TechLeiloes;Trusted_Connection=True;TrustServerCertificate=True;"
 1. Definir com o grupo um nome para a sua loja e o segmento de mercado a ser abordado;
 
 

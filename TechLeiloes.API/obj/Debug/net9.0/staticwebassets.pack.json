@@ -1,0 +1,81 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_153_545467_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_153_545467_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_16344_490902_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_16344_490902_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_16746_205163_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_16746_205163_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_17058_475055_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_17058_475055_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_17222_732133_H.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_17222_732133_H.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_17611_639057_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_17611_639057_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_17617_658423_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_17617_658423_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_18501_343016_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_18501_343016_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_18506_644847_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_18506_644847_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_18632_646673_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_18632_646673_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_18661_704903_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_18661_704903_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_18779_556207_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_18779_556207_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\produtos\\I_2898_730348_A.jpg",
+      "PackagePath": "staticwebassets\\img\\produtos\\I_2898_730348_A.jpg"
+    },
+    {
+      "Id": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.API\\wwwroot\\img\\usuarios\\140818496.jpg",
+      "PackagePath": "staticwebassets\\img\\usuarios\\140818496.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.TechLeiloes.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.TechLeiloes.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.TechLeiloes.API.props",
+      "PackagePath": "build\\TechLeiloes.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.TechLeiloes.API.props",
+      "PackagePath": "buildMultiTargeting\\TechLeiloes.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.TechLeiloes.API.props",
+      "PackagePath": "buildTransitive\\TechLeiloes.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -66,6 +66,8 @@ public class AppDbContext : IdentityDbContext<Usuario>
                 EmailConfirmed = true,
                 Nome = "José Antonio Gallo Junior",
                 DataNascimento = DateTime.Parse("05/08/1981"),
+                Profissao = "Administrador do Sistema",
+                Telefone = "11999999999"
                 
             }
         ];
