@@ -9,61 +9,113 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TechLeiloes.UI
 build_property.RootNamespace = TechLeiloes.UI
-build_property.ProjectDir = C:\Users\etec\Desktop\Tech-Leiloes\TechLeiloes.UI\
+build_property.ProjectDir = C:\Users\etec\Desktop\Tech-Leiloes\Techleiloes.ui\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\etec\Desktop\Tech-Leiloes\TechLeiloes.UI
+build_property.MSBuildProjectDirectory = C:\Users\etec\Desktop\Tech-Leiloes\Techleiloes.ui
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Admin/Index.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Auth/AcessoNegado.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Auth/AcessoNegado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxBY2Vzc29OZWdhZG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Auth/Login.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Auth/Registro.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Auth/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Home/Index.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Categorias/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Categorias/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Categorias/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Categorias/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Categorias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Home/Detalhes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEZXRhbGhlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Home/Privacy.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Shared/Error.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Home/Produtos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdXRvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Produtos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Produtos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Produtos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Produtos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Produtos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/_ViewImports.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/_ViewStart.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/etec/Desktop/Tech-Leiloes/TechLeiloes.UI/Views/Shared/_Layout.cshtml]
+[C:/Users/etec/Desktop/Tech-Leiloes/Techleiloes.ui/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7v1pm436k0

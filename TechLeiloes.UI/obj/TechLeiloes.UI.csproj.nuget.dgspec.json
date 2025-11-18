@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.UI\\TechLeiloes.UI.csproj": {}
+    "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\Techleiloes.ui\\TechLeiloes.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.UI\\TechLeiloes.UI.csproj": {
+    "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\Techleiloes.ui\\TechLeiloes.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.UI\\TechLeiloes.UI.csproj",
+        "projectUniqueName": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\Techleiloes.ui\\TechLeiloes.UI.csproj",
         "projectName": "TechLeiloes.UI",
-        "projectPath": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.UI\\TechLeiloes.UI.csproj",
+        "projectPath": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\Techleiloes.ui\\TechLeiloes.UI.csproj",
         "packagesPath": "C:\\Users\\etec\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\TechLeiloes.UI\\obj\\",
+        "outputPath": "C:\\Users\\etec\\Desktop\\Tech-Leiloes\\Techleiloes.ui\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

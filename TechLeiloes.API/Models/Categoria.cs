@@ -11,7 +11,9 @@ public class Categoria
 
     [Required]
     [StringLength(50)]
-    public string Tipo { get; set; }
+    public string Nome { get; set; }
+    public string Foto { get; set; }
+    public string Cor { get; set; }
 
     // Propriedade de Navegação (Relação 1:N com Imovel)
     public ICollection<Imovel> Imoveis { get; set; }

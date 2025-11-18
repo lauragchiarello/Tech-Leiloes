@@ -95,16 +95,16 @@ public class AppDbContext : IdentityDbContext<Usuario>
     {
         List<Categoria> categorias = new()
         {
-            new Categoria { Id = 1, Tipo = "Casa"},
-            new Categoria { Id = 2, Tipo = "Apartamento"},
-            new Categoria { Id = 3, Tipo = "Terreno"},
-            new Categoria { Id = 4, Tipo = "Agência"},
-            new Categoria { Id = 5, Tipo = "Galpão"},
-            new Categoria { Id = 6, Tipo = "Comercial"},
-            new Categoria { Id = 7, Tipo = "Área Rural"},
-            new Categoria { Id = 8, Tipo = "Garagem"},
-            new Categoria { Id = 9, Tipo = "Área Industrial"},
-            new Categoria { Id = 10, Tipo = "Outros"}
+            new Categoria { Id = 1, Nome = "Casa"},
+            new Categoria { Id = 2, Nome = "Apartamento"},
+            new Categoria { Id = 3, Nome = "Terreno"},
+            new Categoria { Id = 4, Nome = "Agência"},
+            new Categoria { Id = 5, Nome = "Galpão"},
+            new Categoria { Id = 6, Nome = "Comercial"},
+            new Categoria { Id = 7, Nome = "Área Rural"},
+            new Categoria { Id = 8, Nome = "Garagem"},
+            new Categoria { Id = 9, Nome = "Área Industrial"},
+            new Categoria { Id = 10, Nome = "Outros"}
         };
         builder.Entity<Categoria>().HasData(categorias);
     }

@@ -35,7 +35,9 @@ CREATE TABLE Leiloeiro (
 
 CREATE TABLE Categoria (
     id_categoria INT IDENTITY(1,1) PRIMARY KEY,
-    tipo VARCHAR(50) NOT NULL
+    nome VARCHAR(50) NOT NULL,
+    foto VARCHAR(300),
+    cor VARCHAR(26)
 );
 
 -- TABELA: Estado

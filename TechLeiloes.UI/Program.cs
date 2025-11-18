@@ -1,14 +1,15 @@
-using TechLeiloes.UI.Middleware;
 using TechLeiloes.UI.Models;
-using TechLeiloes.UI.Services.Implementations;
+using TechLeiloes.UI;
 using TechLeiloes.UI.Services.Interfaces;
+using TechLeiloes.UI.Services.Implementations;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configurações
 builder.Services.Configure<ApiSettings>(
     builder.Configuration.GetSection("ApiSettings"));
-builder.Services.AddScoped<UserContextService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -50,6 +51,16 @@ builder.Services.AddHttpContextAccessor();
 
 // Serviços de API
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddAutoMapper(typeof(MappingConfig));
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<IProdutoService, ProdutoService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<IProdutoService, ProdutoService>();
+builder.Services.AddScoped<ILojaService, LojaService>();
+
 
 var app = builder.Build();
 
@@ -65,13 +76,6 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseSession();
 
-app.Use(async (context, next) =>
-{
-    var userContextService = context.RequestServices.GetRequiredService<UserContextService>();
-    context.User = userContextService.CreateClaimsPrincipal();
-    await next();
-});
-
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -82,5 +86,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
-
 app.Run();
+
