@@ -159,6 +159,210 @@ SELECT * FROM FOTO
 --8)TRAZER A LISTA DE FAVORITOS
 SELECT * FROM FAVORITOS
 
+/* ============================================================
+   CRIAÇÃO DO BANCO
+============================================================ */
+
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'LeilaoDB')
+BEGIN
+    CREATE DATABASE LeilaoDB;
+END
+GO
+
+USE LeilaoDB;
+GO
+
+/* ============================================================
+   TABELA CIDADE
+============================================================ */
+
+CREATE TABLE CIDADE (
+    CIDADEID INT IDENTITY(1,1) PRIMARY KEY,
+    NOME VARCHAR(150) NOT NULL,
+    CEP VARCHAR(10)
+);
+
+CREATE INDEX IX_CIDADE_NOME ON CIDADE(NOME);
+
+/* ============================================================
+   TABELA CATEGORIA
+============================================================ */
+
+CREATE TABLE CATEGORIA (
+    CATEGORIAID INT IDENTITY(1,1) PRIMARY KEY,
+    DESCRICAOCATEGORIA VARCHAR(150) NOT NULL,
+    CORCATEGORIA VARCHAR(7),
+    CORCATEGORIACONTRASTE VARCHAR(7),
+    DATACRIACAO DATETIME NOT NULL DEFAULT GETDATE(),
+    DATAATUALIZACAO DATETIME NULL
+);
+
+CREATE INDEX IX_CATEGORIA_DESCRICAO ON CATEGORIA(DESCRICAOCATEGORIA);
+
+/* ============================================================
+   TABELA STATUS
+============================================================ */
+
+CREATE TABLE STATUS (
+    STATUSID INT IDENTITY(1,1) PRIMARY KEY,
+    NOME VARCHAR(100) NOT NULL UNIQUE
+);
+
+/* ============================================================
+   TABELA USUARIO
+============================================================ */
+
+CREATE TABLE USUARIO (
+    USUARIOID INT IDENTITY(1,1) PRIMARY KEY,
+    NOME VARCHAR(150) NOT NULL,
+    EMAIL VARCHAR(150) NOT NULL UNIQUE,
+    TELEFONE VARCHAR(20),
+    PROFISSAO VARCHAR(100),
+    DATACRIACAO DATETIME NOT NULL DEFAULT GETDATE()
+);
+
+/* ============================================================
+   TABELA LEILOEIRO
+============================================================ */
+
+CREATE TABLE LEILOEIRO (
+    LEILOEIROID INT IDENTITY(1,1) PRIMARY KEY,
+    NOME VARCHAR(150) NOT NULL,
+    EMAIL VARCHAR(150),
+    TELEFONE VARCHAR(20),
+    WEBSITE VARCHAR(200)
+);
+
+/* ============================================================
+   TABELA IMOVEL
+============================================================ */
+
+CREATE TABLE IMOVEL (
+    IMOVELID INT IDENTITY(1,1) PRIMARY KEY,
+    MATRICULA VARCHAR(100),
+    AREATOTAL DECIMAL(10,2),
+    CIDADEID INT NOT NULL,
+
+    CONSTRAINT FK_IMOVEL_CIDADE 
+        FOREIGN KEY (CIDADEID) REFERENCES CIDADE(CIDADEID)
+);
+
+CREATE INDEX IX_IMOVEL_CIDADE ON IMOVEL(CIDADEID);
+
+/* ============================================================
+   TABELA LEILAO
+============================================================ */
+
+CREATE TABLE LEILAO (
+    LEILAOID INT IDENTITY(1,1) PRIMARY KEY,
+    IMOVELID INT NOT NULL,
+    LEILOEIROID INT NOT NULL,
+    CATEGORIAID INT NOT NULL,
+    STATUSID INT NOT NULL,
+
+    DATACRIACAO DATETIME NOT NULL DEFAULT GETDATE(),
+    HORAINICIO DATETIME,
+    HORATERMINO DATETIME,
+    DESCONTO DECIMAL(5,2),
+
+    CONSTRAINT FK_LEILAO_IMOVEL 
+        FOREIGN KEY (IMOVELID) REFERENCES IMOVEL(IMOVELID),
+
+    CONSTRAINT FK_LEILAO_LEILOEIRO 
+        FOREIGN KEY (LEILOEIROID) REFERENCES LEILOEIRO(LEILOEIROID),
+
+    CONSTRAINT FK_LEILAO_CATEGORIA 
+        FOREIGN KEY (CATEGORIAID) REFERENCES CATEGORIA(CATEGORIAID),
+
+    CONSTRAINT FK_LEILAO_STATUS 
+        FOREIGN KEY (STATUSID) REFERENCES STATUS(STATUSID),
+
+    CONSTRAINT CK_LEILAO_DESCONTO 
+        CHECK (DESCONTO >= 0 AND DESCONTO <= 100)
+);
+
+CREATE INDEX IX_LEILAO_STATUS ON LEILAO(STATUSID);
+CREATE INDEX IX_LEILAO_IMOVEL ON LEILAO(IMOVELID);
+CREATE INDEX IX_LEILAO_LEILOEIRO ON LEILAO(LEILOEIROID);
+
+/* ============================================================
+   TABELA FOTO
+============================================================ */
+
+CREATE TABLE FOTO (
+    FOTOID INT IDENTITY(1,1) PRIMARY KEY,
+    IMOVELID INT NOT NULL,
+    CAMINHOIMAGEM VARCHAR(300) NOT NULL,
+
+    CONSTRAINT FK_FOTO_IMOVEL 
+        FOREIGN KEY (IMOVELID) REFERENCES IMOVEL(IMOVELID)
+);
+
+CREATE INDEX IX_FOTO_IMOVEL ON FOTO(IMOVELID);
+
+/* ============================================================
+   TABELA FAVORITOS
+============================================================ */
+
+CREATE TABLE FAVORITOS (
+    FAVORITOSID INT IDENTITY(1,1) PRIMARY KEY,
+    USUARIOID INT NOT NULL,
+    LEILAOID INT NOT NULL,
+    DATAFAVORITO DATETIME NOT NULL DEFAULT GETDATE(),
+
+    CONSTRAINT FK_FAVORITOS_USUARIO 
+        FOREIGN KEY (USUARIOID) REFERENCES USUARIO(USUARIOID),
+
+    CONSTRAINT FK_FAVORITOS_LEILAO 
+        FOREIGN KEY (LEILAOID) REFERENCES LEILAO(LEILAOID),
+
+    CONSTRAINT UQ_FAVORITO UNIQUE (USUARIOID, LEILAOID)
+);
+
+CREATE INDEX IX_FAVORITOS_USUARIO ON FAVORITOS(USUARIOID);
+
+/* ============================================================
+   TABELA HISTORICO
+============================================================ */
+
+CREATE TABLE HISTORICO (
+    HISTORICOID INT IDENTITY(1,1) PRIMARY KEY,
+    LEILAOID INT NOT NULL,
+    DATAHISTORICO DATETIME NOT NULL DEFAULT GETDATE(),
+    SUCESSO BIT,
+    TOTALLEILOES INT,
+
+    CONSTRAINT FK_HISTORICO_LEILAO 
+        FOREIGN KEY (LEILAOID) REFERENCES LEILAO(LEILAOID)
+);
+
+CREATE INDEX IX_HISTORICO_LEILAO ON HISTORICO(LEILAOID);
+
+/* ============================================================
+   TABELA SINCRONIZACAO
+============================================================ */
+
+CREATE TABLE SINCRONIZACAO (
+    SINCRONIZACAOID INT IDENTITY(1,1) PRIMARY KEY,
+    DATAATUALIZACAO DATETIME NOT NULL DEFAULT GETDATE(),
+    SUCESSO BIT
+);
+
+/* ============================================================
+   TABELAS DE CONTROLE
+============================================================ */
+
+CREATE TABLE NOVOSLEILOES (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    LEILAOID INT,
+    DATAREGISTRO DATETIME NOT NULL DEFAULT GETDATE()
+);
+
+CREATE TABLE LEILOESREMOVIDOS (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    LEILAOID INT,
+    DATAREGISTRO DATETIME NOT NULL DEFAULT GETDATE()
+);
 
 
 
