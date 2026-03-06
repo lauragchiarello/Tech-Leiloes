@@ -228,3 +228,14 @@ CREATE TABLE LEILOESREMOVIDOS (
     LEILAOID INT,
     DATAREGISTRO DATETIME NOT NULL DEFAULT GETDATE()
 );
+
+-- comandos git -- 
+git status
+git add .
+git commit -m 'Criação da Service e Models#
+>> Inclui interfaces vazias para serviços de Imóvel, Leilão, Leiloeiro e Usuário. Cria a classe ResultadoExecucao<T> para padronizar retornos. Adiciona dependências Dapper e SqlClient ao projeto.
+ git config --global user.email "laura_chiarello@live.com"
+ git config --global user.name "Laura Chiarello"
+ git status
+git log
+> git push origin master
