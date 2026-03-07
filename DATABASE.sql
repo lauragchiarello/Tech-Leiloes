@@ -5,11 +5,11 @@
 
 IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'TechLeiloes')
 BEGIN
-    CREATE DATABASE LeilaoDB;
+    CREATE DATABASE TechLeiloes;
 END
 GO
 
-USE LeilaoDB;
+USE TechLeiloes;
 GO
 
 /* ============================================================
