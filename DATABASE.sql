@@ -3,7 +3,7 @@
    CRIAÇÃO DO BANCO
 ============================================================ */
 
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'LeilaoDB')
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'TechLeiloes')
 BEGIN
     CREATE DATABASE LeilaoDB;
 END
